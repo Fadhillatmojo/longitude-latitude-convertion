@@ -90,7 +90,7 @@ const DDtoDMSForm = () => {
 			</div>
 
 			{/* Add to Maps Button */}
-			<button className="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-700">
+			<button className="w-full bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-700">
 				Add to Maps
 			</button>
 		</div>

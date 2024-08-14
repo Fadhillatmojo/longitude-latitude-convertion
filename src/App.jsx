@@ -35,7 +35,7 @@ const App = () => {
 								}`}
 								onClick={() => setActiveTab("DMStoDD")}
 							>
-								DMStoDD
+								DMS to DD
 							</button>
 							<button
 								className={`flex-1 p-2 ${
@@ -45,7 +45,7 @@ const App = () => {
 								}`}
 								onClick={() => setActiveTab("DDtoDMS")}
 							>
-								DDtoDMS
+								DD to DMS
 							</button>
 						</div>
 						<div>
