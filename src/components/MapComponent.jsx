@@ -71,64 +71,6 @@ function MapComponent({ coordinates }) {
 		}
 	}, [map, coordinates, vectorSource]);
 
-	// const [map, setMap] = useState(null);
-
-	// useEffect(() => {
-	// 	const osmLayer = new TileLayer({
-	// 		preload: Infinity,
-	// 		source: new OSM(),
-	// 	});
-
-	// 	const initialMap = new Map({
-	// 		target: "map",
-	// 		layers: [osmLayer],
-	// 		view: new View({
-	// 			center: [0, 0],
-	// 			zoom: 0,
-	// 		}),
-	// 	});
-
-	// 	setMap(initialMap);
-
-	// 	return () => initialMap.setTarget(null);
-	// }, []);
-
-	// useEffect(() => {
-	// 	if (map && coordinates) {
-	// 		const [lon, lat] = coordinates;
-
-	// 		const transformedCoordinates = fromLonLat([lon, lat]);
-
-	// 		// Create a new marker
-	// 		const marker = new Feature({
-	// 			geometry: new Point(transformedCoordinates),
-	// 		});
-
-	// 		// Apply a style to the marker
-	// 		marker.setStyle(
-	// 			new Style({
-	// 				image: new Icon({
-	// 					src: "https://upload.wikimedia.org/wikipedia/commons/e/ec/RedDot.svg",
-	// 					scale: 1,
-	// 				}),
-	// 			})
-	// 		);
-
-	// 		// Create a vector layer to hold the marker
-	// 		const vectorLayer = new VectorLayer({
-	// 			source: new VectorSource({
-	// 				features: [marker],
-	// 			}),
-	// 		});
-
-	// 		// Add the vector layer to the map
-	// 		map.addLayer(vectorLayer);
-
-	// 		// Center the map to the marker
-	// 		map.getView().setCenter(transformedCoordinates);
-	// 		map.getView().setZoom(5);
-	// 	}
-	// }, [map, coordinates]);
 
 	return (
 		<div
