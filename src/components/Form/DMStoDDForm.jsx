@@ -13,6 +13,7 @@ const DMStoDD = ({ onAddToMap }) => {
 	});
 	const [latitudeDD, setLatitudeDD] = useState("");
 	const [longitudeDD, setLongitudeDD] = useState("");
+	const [error, setError] = useState("");
 
 	const handleInputChange = (e, type, coord) => {
 		const value = e.target.value;
@@ -37,20 +38,24 @@ const DMStoDD = ({ onAddToMap }) => {
 
 		setLatitudeDD(latDD);
 		setLongitudeDD(lonDD);
-		return { latDD, lonDD }; // Mengembalikan hasil konversi
 	};
 
 	const handleAddToMap = () => {
-		const { latDD, lonDD } = convertDMStoDD(); // Jalankan konversi terlebih dahulu
+		convertDMStoDD(); // Convert coordinates first
 
-		console.log("Converted Latitude:", latDD); // Debugging
-		console.log("Converted Longitude:", lonDD); // Debugging
-
-		if (typeof onAddToMap === "function") {
-			console.log("Calling onAddToMap with:", latDD, lonDD); // Debugging
-			onAddToMap(latDD, lonDD); // Kemudian kirim koordinat ke peta
+		// Validate after conversion
+		if (
+			latitudeDD >= -90 &&
+			latitudeDD <= 90 &&
+			longitudeDD >= -180 &&
+			longitudeDD <= 180
+		) {
+			onAddToMap(latitudeDD, longitudeDD);
+			setError(""); // Clear error message if valid
 		} else {
-			console.error("onAddToMap is not a function");
+			setError(
+				"Coordinates are out of range. Please enter valid values."
+			);
 		}
 	};
 
@@ -148,11 +153,14 @@ const DMStoDD = ({ onAddToMap }) => {
 
 			{/* Add to Maps Button */}
 			<button
-				onClick={handleAddToMap} // Menggunakan handleAddToMap
+				onClick={handleAddToMap}
 				className="w-full bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-700"
 			>
 				Add to Maps
 			</button>
+
+			{/* Error Message */}
+			{error && <p className="text-red-500">{error}</p>}
 		</div>
 	);
 };

@@ -146,7 +146,7 @@ const DDtoDMS = ({ onAddToMap }) => {
 			</h1>
 
 			{/* Latitude */}
-			<div className="mb-4">
+			<div className="mb-4 w-full">
 				<label className="block text-gray-700">Latitude (DD)</label>
 				<input
 					type="number"
@@ -159,7 +159,7 @@ const DDtoDMS = ({ onAddToMap }) => {
 			</div>
 
 			{/* Longitude */}
-			<div className="mb-4">
+			<div className="mb-4 w-full">
 				<label className="block text-gray-700">Longitude (DD)</label>
 				<input
 					type="number"
