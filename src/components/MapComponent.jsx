@@ -1,39 +1,3 @@
-// // // MapComponent.js
-// import React, { useState, useEffect, useRef } from "react";
-// import { Map, View } from "ol";
-// import TileLayer from "ol/layer/Tile";
-// import OSM from "ol/source/OSM";
-// import "ol/ol.css";
-
-// function MapComponent() {
-// 	useEffect(() => {
-// 		const osmLayer = new TileLayer({
-// 			preload: Infinity,
-// 			source: new OSM(),
-// 		});
-
-// 		const map = new Map({
-// 			target: "map",
-// 			layers: [osmLayer],
-// 			view: new View({
-// 				center: [90, 33.23],
-// 				zoom: 10,
-// 			}),
-// 		});
-// 		return () => map.setTarget(null);
-// 	}, []);
-
-// 	return (
-// 		<div
-// 			style={{ height: "100vh", width: "100%" }}
-// 			id="map"
-// 			className="map-container"
-// 		/>
-// 	);
-// }
-
-// export default MapComponent;
-
 import React, { useState, useEffect } from "react";
 import { Map, View } from "ol";
 import TileLayer from "ol/layer/Tile";
